@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5D9DCB1E26E6A6B700D4BECA /* EssentialFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D9DCB1426E6A6B700D4BECA /* EssentialFeed.framework */; };
 		5D9DCB2326E6A6B700D4BECA /* EssentialFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9DCB2226E6A6B700D4BECA /* EssentialFeedTests.swift */; };
+		5D9DCB3026E77E5100D4BECA /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9DCB2F26E77E5100D4BECA /* FeedItem.swift */; };
+		5D9DCB3226E77E5E00D4BECA /* FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9DCB3126E77E5E00D4BECA /* FeedLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +29,8 @@
 		5D9DCB1D26E6A6B700D4BECA /* EssentialFeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D9DCB2226E6A6B700D4BECA /* EssentialFeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialFeedTests.swift; sourceTree = "<group>"; };
 		5D9DCB2426E6A6B700D4BECA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D9DCB2F26E77E5100D4BECA /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
+		5D9DCB3126E77E5E00D4BECA /* FeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				5D9DCB1826E6A6B700D4BECA /* Info.plist */,
+				5D9DCB2E26E77E3D00D4BECA /* Feed Feature */,
 			);
 			path = EssentialFeed;
 			sourceTree = "<group>";
@@ -81,6 +86,15 @@
 				5D9DCB2426E6A6B700D4BECA /* Info.plist */,
 			);
 			path = EssentialFeedTests;
+			sourceTree = "<group>";
+		};
+		5D9DCB2E26E77E3D00D4BECA /* Feed Feature */ = {
+			isa = PBXGroup;
+			children = (
+				5D9DCB2F26E77E5100D4BECA /* FeedItem.swift */,
+				5D9DCB3126E77E5E00D4BECA /* FeedLoader.swift */,
+			);
+			path = "Feed Feature";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +157,7 @@
 				TargetAttributes = {
 					5D9DCB1326E6A6B700D4BECA = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
 					};
 					5D9DCB1C26E6A6B700D4BECA = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -190,6 +205,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D9DCB3226E77E5E00D4BECA /* FeedLoader.swift in Sources */,
+				5D9DCB3026E77E5100D4BECA /* FeedItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +353,7 @@
 		5D9DCB2926E6A6B700D4BECA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -353,6 +371,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.craftedbycrazy.EssentialFeed;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -360,6 +379,7 @@
 		5D9DCB2A26E6A6B700D4BECA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -384,6 +404,7 @@
 		5D9DCB2C26E6A6B700D4BECA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = EssentialFeedTests/Info.plist;
@@ -401,6 +422,7 @@
 		5D9DCB2D26E6A6B700D4BECA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = EssentialFeedTests/Info.plist;
