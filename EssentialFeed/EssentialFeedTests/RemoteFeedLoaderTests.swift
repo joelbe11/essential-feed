@@ -10,6 +10,8 @@ import XCTest
 
 class RemoteFeedLoaderTests: XCTestCase {
     
+    // MARK: - Nested Type
+    
     class HTTPClientSpy: HTTPClient {
         var requestURL: URL?
         
@@ -17,13 +19,15 @@ class RemoteFeedLoaderTests: XCTestCase {
             requestURL = url
         }
     }
+    
+    // MARK: - Tests
 
     func test_init_doesNotRequestDataFromURL() {
         let (_, client) = makeSUT()
         XCTAssertNil(client.requestURL)
     }
     
-    func test_load_requestDataFromURL() {
+    func test_load_requestsDataFromURL() {
         let url: URL = .init(string: "http://a-given-url.com")!
         let (sut, client) = makeSUT(url: url)
         
