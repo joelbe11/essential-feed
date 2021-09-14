@@ -7,18 +7,15 @@
 
 import Foundation
 
-public final class RemoteFeedLoader {
+public final class RemoteFeedLoader: FeedLoader {
     
     // MARK: - Nested Types
+    
+    public typealias Result = LoadFeedResult
     
     public enum Error: Swift.Error {
         case connectivity
         case invalidData
-    }
-    
-    public enum Result: Equatable {
-        case success([FeedItem])
-        case failure(Error)
     }
     
     // MARK: - Private Properties
@@ -44,7 +41,7 @@ public final class RemoteFeedLoader {
                 completion(FeedItemsMapper.map(data, response))
                 
             case .failure:
-                completion(.failure(.connectivity))
+                completion(.failure(Error.connectivity))
             }
         }
     }
