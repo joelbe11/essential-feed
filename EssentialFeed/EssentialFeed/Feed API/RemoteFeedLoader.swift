@@ -11,7 +11,7 @@ public final class RemoteFeedLoader: FeedLoader {
     
     // MARK: - Nested Types
     
-    public typealias Result = LoadFeedResult<Error>
+    public typealias Result = LoadFeedResult
     
     public enum Error: Swift.Error {
         case connectivity
@@ -41,7 +41,7 @@ public final class RemoteFeedLoader: FeedLoader {
                 completion(FeedItemsMapper.map(data, response))
                 
             case .failure:
-                completion(.failure(.connectivity))
+                completion(.failure(Error.connectivity))
             }
         }
     }
