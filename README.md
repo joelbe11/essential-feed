@@ -1,1 +1,1 @@
-# essential-feed
+# Essential Feed Case Study
